@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function NewTasks({addTask}) { 
-const [enteredTask,setEnteredTask]=useState();
+const [enteredTask,setEnteredTask]=useState('');
 
  function handleChange(event) {
     setEnteredTask(event.target.value);
@@ -13,8 +13,11 @@ const [enteredTask,setEnteredTask]=useState();
 
     return (
         <div className="flex items-center gap-4">
-          <input type="text"  className="w-64 px-2 py-1 rounded-sm bg-stone-300" value={enteredTask} onChange={handleChange}/>
-          <button className="text-stone-700 hover:text-stone-950 bg-stone-300 rounded px-2 py-1">Add Task</button>
+          <input type="text" className="w-64 px-2 py-1 rounded-sm bg-stone-300"
+           value={enteredTask}
+           onChange={handleChange}
+            />
+          <button className="text-stone-700 hover:text-stone-950 bg-stone-300 rounded px-2 py-1" onClick={handleClick}>Add Task</button>
         </div>
     )
  }
