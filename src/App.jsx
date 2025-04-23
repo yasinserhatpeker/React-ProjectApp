@@ -9,7 +9,9 @@ function App() {
     selectedProjectId:undefined,
     projects:[],
   });
-  
+  function handleAddTask() {}
+  function handleDeleteTask() {}
+
   function handleDeleteProject() {
    
     setProjectState(prevState => {
@@ -70,7 +72,7 @@ function App() {
   console.log(projectState);
 
    const selectedProject=projectState.projects.find(project =>project.id===projectState.selectedProjectId);
-   let content=<SelectedProject project={selectedProject} onDelete={handleDeleteProject}/>
+   let content=<SelectedProject project={selectedProject} onDelete={handleDeleteProject} addTask={handleAddTask} deleteTask={handleDeleteTask}/>
 
    if(projectState.selectedProjectId === null) {
      content =<NewProject onAdd={handleAddProject} onCancel={handleStartCancelProject} />
