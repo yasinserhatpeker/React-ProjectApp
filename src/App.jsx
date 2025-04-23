@@ -9,7 +9,23 @@ function App() {
     selectedProjectId:undefined,
     projects:[],
   });
-  function handleAddTask() {}
+
+  function handleAddTask(text) {
+    
+    setProjectState(prevState => {
+      const taskId=Math.random();
+      const newTask= {
+        text:text,
+        projectId:prevState.selectedProjectId,
+        id:taskId,
+      };
+      return {
+        ...prevState,
+       tasks:[newTask,...prevState.tasks]
+      }
+     })
+   
+  }
   function handleDeleteTask() {}
 
   function handleDeleteProject() {

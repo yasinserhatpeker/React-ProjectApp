@@ -1,10 +1,14 @@
 import { useState } from "react"
 
-export default function NewTasks(){ 
+export default function NewTasks({addTask}) { 
 const [enteredTask,setEnteredTask]=useState();
 
  function handleChange(event) {
     setEnteredTask(event.target.value);
+ }
+ function handleClick() {
+  addTask(enteredTask);
+  setEnteredTask('');
  }
 
     return (
